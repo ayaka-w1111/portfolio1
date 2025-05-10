@@ -52,21 +52,39 @@
         </ul>
     </section>
 
-    <section id="News" class="wrapper">
-        <h2 class="sec-title">News</h2>
-        <dl>
-            <dt>2025.4.25</dt> 
-            <dd>「クレヨンしんちゃんオカシナもぐもぐワールド」OPEN</dd>
-            <dt>1996.9.27</dt>
-            <dd>野原ひまわり誕生日</dd>
-            <dt>19xx.x.xx</dt>
-            <dd>シロ拾われる</dd>
-            <dt>1987.5.5</dt>
-            <dd>野原しんのすけ誕生日</dd>
-            <dt>1963.9.21</dt>
-            <dd>野原みさえ誕生日</dd>
-        </dl>
-    </section>
+    <section id="News" class="wrapper"> <!-- ニュース全体のセクション。IDはスタイル指定用 -->
+  <h2 class="sec-title">News</h2> <!-- セクションタイトル -->
+
+  <div class="news-list"> <!-- ニュースをまとめて管理するコンテナ -->
+
+    <!-- ↓ここから1件ずつのニュースアイテム -->
+    <div class="news-item"> <!-- 1件目 -->
+      <div class="news-date">2025.4.25</div> <!-- 左側：日付 -->
+      <div class="news-text">「クレヨンしんちゃんオカシナもぐもぐワールド」OPEN</div> <!-- 右側：内容 -->
+    </div>
+
+    <div class="news-item"> <!-- 2件目 -->
+      <div class="news-date">1996.9.27</div>
+      <div class="news-text">野原ひまわり誕生日</div>
+    </div>
+
+    <div class="news-item"> <!-- 以下同様 -->
+      <div class="news-date">19xx.x.xx</div>
+      <div class="news-text">シロ拾われる</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">1987.5.5</div>
+      <div class="news-text">野原しんのすけ誕生日</div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-date">1963.9.21</div>
+      <div class="news-text">野原みさえ誕生日</div>
+    </div>
+
+  </div>
+</section>
 
     <section id="Contact" class="wrapper contact-form">
         <h2 class="sec-title">Contact</h2>
