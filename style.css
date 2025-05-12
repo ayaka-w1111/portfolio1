@@ -75,6 +75,12 @@
   /* === About === */
   #About ul li {
     margin-bottom: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  #About .company-name{
+    font-size: 18px;
+    font-weight: bold;
   }
   
   /* === Works (画像ギャラリー) === */
@@ -158,4 +164,52 @@
     cursor: pointer;
     font-size: 16px;
   }
- /*===なんで===*/
+ 
+  /*スマホ用*/
+  @media(max-width:768px){
+    .header{
+      flex-direction: column;  /*横並びだったメニューとタイトルを横並び*/
+      align-items: center;     /*中央にする*/
+      gap: 20px;               /*メニュー同士の隙間をすこしあける*/
+      padding: 20px 15px;      /*余白を少し小さくする*/
+    } 
+  .header h1{
+    font-size: 28px;
+  }
+  .header-list-item{
+    flex-direction: column;   /*メニュー項目を1列に*/
+    gap: 10px;                /*メニュー間の隙間を小さく*/
+  }
+  .wrapper{
+    padding:0 15px;           /*スマホの幅が狭いから、余白をコンパクトに*/
+    margin: 40px auto;        /*上下の余白も少し減らす*/
+  }
+  .sec-title{
+    font-size: 22px;
+  }
+  #About ul{
+    font-size: 14px;         /*スマホ用に文字を小さく*/
+    letter-spacing: 0.05em;  /*文字の間をつめる*/
+  }
+  #About .company-name{
+    font-size: 16px;
+  }
+  #Works ul{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  #Works img{
+    border-radius: 8px;
+  }
+  .news-item{
+    grid-template-columns: 1fr;  /*日付と内容を縦にする*/
+  }
+  .news-date{
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .news-text{
+    /*明日やる*/
+  }
+
+  }
