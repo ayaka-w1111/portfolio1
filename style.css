@@ -209,7 +209,19 @@
     font-size: 14px;
   }
   .news-text{
-    /*明日やる*/
+    margin: 0;                   /*デフォの余白を無くす*/
   }
 
+  .contact-form{
+    max-width: 600px;           /*フォームの幅を制限*/
+    margin: 40px auto;          /*中央に寄せる、上下の余白*/
+    padding: 30px;              /*内側の余白*/
+    border: 1px solid #ccc;   /*枠線で囲む*/
+    border-radius: 10px;         /*線の丸み*/
+  } 
+  .contact-form input, 
+  .contact-form textarea{
+    width: 100%;                /*枠をフォーム枠一杯に.以下続く*/    
+
   }
+}
