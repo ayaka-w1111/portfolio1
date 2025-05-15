@@ -75,6 +75,12 @@
   /* === About === */
   #About ul li {
     margin-bottom: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  #About .company-name{
+    font-size: 18px;
+    font-weight: bold;
   }
   
   /* === Works (画像ギャラリー) === */
@@ -91,21 +97,44 @@
   }
   
   /* === News セクション === */
-  #News dl {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    row-gap: 10px;
-    column-gap: 20px;
-  }
+  .news-list {
+  display: flex;              /* 子要素を並べるモード */
+  flex-direction:column /* 子要素を縦に並べる（デフォルトは横） */
+}
+.news-item{
+  display: grid; /* グリッドレイアウトで左右に並べる */
+  grid-template-columns: 120px 1fr; /* 左：120px固定、右：残り全部使う */
+  column-gap: 20px;/* 左右の間に20pxのすき間 */
+  padding: 10px 0;/* 上下にスペースを取って読みやすく */
+  border-bottom: 1px solid #ccc;/* 各行の下に線を引いて区切る */
   
-  #News dt {
-    font-weight: bold;
-    color: #555;
-  }
-  
-  #News dd {
-    margin: 0;
-  }
+}
+.news-date{
+  font-weight: bold;/* 太字 */
+  color:#555
+}
+.news-text{
+  margin:0;/* デフォルトの余白をなくして揃える */
+}
+/* 🧱 各ニュース項目のボックス（左：日付、右：本文） */
+.news-item {
+  display: grid;                              /* グリッドレイアウトで左右に並べる */
+  grid-template-columns: 120px 1fr;           /* 左：120px固定、右：残り全部使う */
+  column-gap: 20px;                           /* 左右の間に20pxのすき間 */
+  padding: 10px 0;                            /* 上下にスペースを取って読みやすく */
+  border-bottom: 1px solid #ccc;              /* 各行の下に線を引いて区切る */
+}
+
+/* 🗓 左の「日付」部分の見た目 */
+.news-date {
+  font-weight: bold;         /* 太字にして目立たせる */
+  color: #555;               /* 少し落ち着いたグレー色 */
+}
+
+/* 💬 右の「内容」部分の見た目 */
+.news-text {
+  margin: 0;                 /* デフォルトの余白をなくして揃える */
+}
   
   /* === Contact フォーム === */
   .contact-form {
@@ -117,7 +146,8 @@
     background: #f9f9f9;
   }
   
-  .contact-form input,textarea {
+  .contact-form input,
+  .contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -134,3 +164,75 @@
     cursor: pointer;
     font-size: 16px;
   }
+ 
+  /*スマホ用*/
+  @media(max-width:768px){
+    .header{
+      flex-direction: column;  /*横並びだったメニューとタイトルを横並び*/
+      align-items: center;     /*中央にする*/
+      gap: 20px;               /*メニュー同士の隙間をすこしあける*/
+      padding: 20px 15px;      /*余白を少し小さくする*/
+    } 
+  .header h1{
+    font-size: 28px;
+  }
+  .header-list-item{
+    flex-direction: column;   /*メニュー項目を1列に*/
+    gap: 10px;                /*メニュー間の隙間を小さく*/
+  }
+  .wrapper{
+    padding:0 15px;           /*スマホの幅が狭いから、余白をコンパクトに*/
+    margin: 40px auto;        /*上下の余白も少し減らす*/
+  }
+  .sec-title{
+    font-size: 22px;
+  }
+  #About ul{
+    font-size: 14px;         /*スマホ用に文字を小さく*/
+    letter-spacing: 0.05em;  /*文字の間をつめる*/
+  }
+  #About .company-name{
+    font-size: 16px;
+  }
+  #Works ul{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  #Works img{
+    border-radius: 8px;
+  }
+  .news-item{
+    grid-template-columns: 1fr;  /*日付と内容を縦にする*/
+  }
+  .news-date{
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .news-text{
+    margin: 0;                   /*デフォの余白を無くす*/
+  }
+
+  .contact-form{
+    max-width: 600px;           /*フォームの幅を制限*/
+    margin: 40px auto;          /*中央に寄せる、上下の余白*/
+    padding: 30px;              /*内側の余白*/
+    border: 1px solid #ccc;   /*枠線で囲む*/
+    border-radius: 10px;         /*線の丸み*/
+  } 
+  .contact-form input, 
+  .contact-form textarea{
+    width: 100%;                /*枠をフォーム枠一杯に*/ 
+    padding: 10px;              /*中の余白*/
+    margin-top: 5px;            /*各行の上に余白*/
+    margin-bottom: 20px;        /*下に余白*/
+    border: 1px solid #ccc;   /*枠線*/
+    border-radius: 5px;         /*丸みを付ける*/
+  }
+  .contact-form input[type="submit"]{
+    background-color: #000;   /*背景くろ*/
+    color: #f9f9f9;           /*全体の文字色*/
+    border: none;               /*ボーダー消す*/
+    padding:12px 30px;          /*ボタン内の余白*/
+    font-size: 16px;            /*文字のサイズ*/
+  }
+}
