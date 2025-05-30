@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <title>nohara family</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-RO1fM3QfUuM4n7J7RHmPln0o50k5OHeE+vR8a5+O2x2t1O6g4GxBdRl9uHdnd7R59vW5exGvN1YQn4u5Wd3i1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
 </head>
 <body>
     <header class="header">
-        <h1 class="site-title">My Work</h1>
+        <h1 class="site-title">
+          <a href="index.html">
+            <img src="img/logo.svg" alt="My Work">
+          </a>
+        </h1>
         <ul class="header-list-item">
             <li><a href="#About">About</a></li>
             <li><a href="#Works">Works</a></li>
@@ -25,30 +32,39 @@
     
        
     
+<section class="full-image">
+  <img src="img/noharafamily.jpg" alt="野原一家">
+</section>
 
-    <section id="About" class="wrapper">
-        <img src="img/noharafamily.jpg" alt="野原一家">
-        <h2 class="sec-title">About</h2>
-        <ul>
-            <li class="company-name">株式会社双葉商事</li>
-            <li>904 Hutabatyo, Kasugabe city, Saitama 100-1000 Japan</li>     
-            <li>TEL: 047-632-7979</li>
-            <li>URL: <a href="https://shinchan-online.jp">shinchan-online.jp</a></li>
-            <li>MAIL: gohan@tabetaina.jp</li>
-        </ul>  
-        <p>ごはんたべてねたいな</p>
-    </section>
+<section id="About" class="wrapper">
+  <h2 class="sec-title">About</h2>
+
+  <div class="about-block company">
+    <p class="company-name">株式会社双葉商事</p>
+  </div>
+
+  <div class="about-block info">
+    <p>904 Hutabatyo, Kasugabe city, Saitama 100-1000 Japan</p>
+    <p>TEL: 047-632-7979</p>
+    <p>URL: <a href="https://shinchan-online.jp">shinchan-online.jp</a></p>
+    <p>MAIL: gohan@tabetaina.jp</p>
+  </div>
+
+  <div class="about-block message">
+    <p>ごはんたべてねたいな</p>
+  </div>
+</section>   
 <!-- レイアウトv4テスト -->
 
-    <section id="Works" class="wrapper">
+    <section class="wrapper">
         <h2 class="sec-title">Works</h2>
-        <ul>
-            <li><img src="img/sinnosuke.png" alt="野原しんのすけ"></li>
-            <li><img src="img/hiroshi.png" alt="野原ひろし"></li>
-            <li><img src="img/misae.png" alt="野原みさえ"></li>
-            <li><img src="img/himawari.png" alt="野原ひまわり"></li>
-            <li><img src="img/shiro.png" alt="シロ"></li>
-            <li><img src="img/musae.png" alt="小山むさえ"></li> 
+        <ul id="Works">
+            <li><img src="img/wani.jpg" alt="ワニ山"></li>
+            <li><img src="img/wani.jpg" alt="ワニ山"></li>
+            <li><img src="img/wani.jpg" alt="ワニ山"></li>
+            <li><img src="img/wani.jpg" alt="ワニ山"></li>
+            <li><img src="img/wani.jpg" alt="ワニ山"></li>
+            <li><img src="img/wani.jpg" alt="ワニ山"></li> 
         </ul>
     </section>
 
@@ -89,17 +105,25 @@
     <section id="Contact" class="wrapper contact-form">
         <h2 class="sec-title">Contact</h2>
         <form action="#" method="post">
-            <p>お名前</p>
-            <input type="text" name="name" required>
-
-            <p>E-mail</p>
+          <div class="form-item">
+           <label for="name">NAME</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-item">
+            <label for="email">E-mail</label>
             <input type="email" name="email" required>
-
-            <p>メッセージ</p>
-            <textarea name="message" rows="5" required></textarea>
-
+          </div>
+          <div class="form-item">
+            <label for="message">MESSAGE</label>
+            <textarea name="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="form-item submit-button">
             <input type="submit" value="送信">
+          </div>
         </form>
     </section>
+  <footer class="footer">
+    <p>@ 2025 My Work </p>
+  </footer>
 </body>
 </html>

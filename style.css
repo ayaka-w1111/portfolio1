@@ -25,25 +25,40 @@
   /* === ヘッダー === */
   .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: 1000px;
-    padding: 40px 20px;
+    padding: 20px 4%;
     margin: 0 auto;
   }
+
+  
+  .site-title img {
+    width: 150px;
+    height: auto;
+    display: block; /* 下の空白対策 */
+    margin-left: 0;
+}
   .header h1{
     font-size: 50px;
   }
   .site-title {
     font-size: 24px;
     font-weight: bold;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   
   .header-list-item {
     display: flex;
     gap: 30px;
+    margin-left: auto;
+    font-size: 18px;
     list-style: none;
   }
+
+ .header-list-item a {
+  font-size: 18px; /* お好みで数値を調整してOK！ */
+}
   
   .header-list-item li a:hover {
     opacity: 0.7;
@@ -58,45 +73,98 @@
     margin-bottom: 80px;
   }
   
+  .full-image{
+    position: relative;
+    left: 50%;
+    right: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+  }
+  
+  .full-image img{
+    width: 100%;
+    height: 420px;
+    max-width: 100%;
+    object-fit: cover;
+  }
   /* === セクション共通 === */
   .wrapper {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 60px auto;
-    padding: 0 20px;
+    padding: 0 10x;
+    text-align: center;
+
   }
 
   .sec-title {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   
   /* === About === */
-  #About ul li {
-    margin-bottom: 10px;
-    letter-spacing: 0.1em;
+  .about-block{
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .about-block p{
+    margin: 5px 0;
+    line-height: 1.6;
   }
 
-  #About .company-name{
+  .about-block .company .company-name{
     font-size: 18px;
     font-weight: bold;
   }
-  
+
+  .about-block.info p,
+  .about-block.message p{
+    font-size:18px;
+    color: #333;
+  }
   /* === Works (画像ギャラリー) === */
-  #Works ul {
+  .wrapper > img{
+    margin-top: 30px;
+    margin-bottom: 80px;
+    width: 100%;
+    border-radius: 10x;
+    height: auto;
+    display: block;
+  }
+  #Works {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    column-gap: 30px;
+    padding: 0;
+    row-gap: 10px;
+    list-style: none;
+  }
+
+
+
+   #Works li {
+    margin: 0;
+    padding: 0;
+    display: block;
   }
   
   #Works img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0;
+    border-radius: 0;
   }
+
+ 
   
   /* === News セクション === */
+  
   .news-list {
   display: flex;              /* 子要素を並べるモード */
   flex-direction:column /* 子要素を縦に並べる（デフォルトは横） */
@@ -110,129 +178,228 @@
   
 }
 .news-date{
-  font-weight: bold;/* 太字 */
-  color:#555
+  letter-spacing: 0.1px;
+  color:#555;
 }
 .news-text{
   margin:0;/* デフォルトの余白をなくして揃える */
+  text-align: left;
 }
 /* 🧱 各ニュース項目のボックス（左：日付、右：本文） */
 .news-item {
   display: grid;                              /* グリッドレイアウトで左右に並べる */
   grid-template-columns: 120px 1fr;           /* 左：120px固定、右：残り全部使う */
-  column-gap: 20px;                           /* 左右の間に20pxのすき間 */
-  padding: 10px 0;                            /* 上下にスペースを取って読みやすく */
+  column-gap: 100px;                           /* 左右の間に20pxのすき間 */
+  padding: 15px 0;                            /* 上下にスペースを取って読みやすく */
   border-bottom: 1px solid #ccc;              /* 各行の下に線を引いて区切る */
 }
 
 /* 🗓 左の「日付」部分の見た目 */
 .news-date {
-  font-weight: bold;         /* 太字にして目立たせる */
-  color: #555;               /* 少し落ち着いたグレー色 */
+  font-size: 18px;
+  color: #555;
+                 /* 少し落ち着いたグレー色 */
 }
 
 /* 💬 右の「内容」部分の見た目 */
 .news-text {
   margin: 0;                 /* デフォルトの余白をなくして揃える */
+  font-size: 18px;
+}
+.news-item:first-child {
+  border-top: 1px solid #ccc;
 }
   
   /* === Contact フォーム === */
   .contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: #f9f9f9;
+    max-width: 1025px;
+    margin: 60px auto;
+    padding:0 ;
   }
   
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+  .form-item{
+    display: flex;
+    align-items: flex-start;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding:0 20px;
   }
-  
-  .contact-form input[type="submit"] {
+  .form-item label{
+    width: 150px;
+    font-size: 1rem;
+    text-align: left;
+     letter-spacing: 0.06em;
+     flex-shrink: 0;
+  }
+
+  .form-item input:not([type="submit"]),
+  .form-item textarea {
+   flex: 1;
+   padding: 12px 20px;
+   font-size: 1rem;
+   border: 1px solid #ccc;
+   border-radius: 0;
+  }
+
+  .form-item textarea{
+    resize: vertical;
+    height: 200px;
+  }
+  .form-item.submit-button {
+  justify-content: center; 
+}
+  .form-item.submit-button input[type="submit"]  {
     background-color: #000;
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 20px 100px;
     cursor: pointer;
     font-size: 16px;
+    margin-bottom: 100px;
+    margin-top: 20px;
+  }
+
+  .footer {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.5rem;
+    padding: 10px 20px;
+    text-align: center;
   }
  
   /*スマホ用*/
   @media(max-width:768px){
+    .header .site-title img{
+      width: 120px; 
+    }
+    
+    .site-title{
+      padding-top: 5px;
+      padding-bottom: 0px;
+    }
     .header{
       flex-direction: column;  /*横並びだったメニューとタイトルを横並び*/
-      align-items: center;     /*中央にする*/
-      gap: 20px;               /*メニュー同士の隙間をすこしあける*/
-      padding: 20px 15px;      /*余白を少し小さくする*/
+      align-items: center;     /*中央にする*/             
+      padding: 15px 15px;      /*余白を少し小さくする*/
+      padding-bottom: 5px;
     } 
   .header h1{
-    font-size: 28px;
+    font-size: 5px;
+    margin-bottom: 0px;
   }
   .header-list-item{
-    flex-direction: column;   /*メニュー項目を1列に*/
-    gap: 10px;                /*メニュー間の隙間を小さく*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
+    margin: 10px auto 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .header-list-item a{
+    font-size: 0.8rem;
+  }
+  .header-list-item .fa-instagram{
+    font-size :1rem;
   }
   .wrapper{
     padding:0 15px;           /*スマホの幅が狭いから、余白をコンパクトに*/
     margin: 40px auto;        /*上下の余白も少し減らす*/
   }
-  .sec-title{
-    font-size: 22px;
+
+  #Works img{
+    aspect-ratio: 4/3;
+    height: auto;
+    max-height: 220px;
+    border-radius: 0px;
+    margin: 12px 0;
+    
   }
-  #About ul{
-    font-size: 14px;         /*スマホ用に文字を小さく*/
+  .sec-title{
+    font-size: 25px;
+  }
+  #About p{
+    font-size: 15px;         /*スマホ用に文字を小さく*/
     letter-spacing: 0.05em;  /*文字の間をつめる*/
   }
   #About .company-name{
-    font-size: 16px;
+    font-size: 14px;
   }
-  #Works ul{
+  .about-block message{
+    font-size:18px
+  }
+  #Works {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 0px;
   }
-  #Works img{
-    border-radius: 8px;
-  }
+ #News{
+  margin-top: 80px;
+ }
   .news-item{
     grid-template-columns: 1fr;  /*日付と内容を縦にする*/
   }
   .news-date{
-    margin-bottom: 5px;
-    font-size: 14px;
+    margin-bottom: 2px;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 15px;
+    margin: 0px;
   }
   .news-text{
-    margin: 0;                   /*デフォの余白を無くす*/
+    margin: 0; 
+    font-size: 15px;  
+    text-align: left;
+    padding-left: 15px;                
+  }
+  #Contact{
+    margin-top: 50px;
   }
 
-  .contact-form{
-    max-width: 600px;           /*フォームの幅を制限*/
-    margin: 40px auto;          /*中央に寄せる、上下の余白*/
-    padding: 30px;              /*内側の余白*/
-    border: 1px solid #ccc;   /*枠線で囲む*/
-    border-radius: 10px;         /*線の丸み*/
-  } 
-  .contact-form input, 
+  .form-item{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-item label{
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: 13px;
+  }
+
+  .contact-form input,
   .contact-form textarea{
-    width: 100%;                /*枠をフォーム枠一杯に*/ 
-    padding: 10px;              /*中の余白*/
-    margin-top: 5px;            /*各行の上に余白*/
-    margin-bottom: 20px;        /*下に余白*/
-    border: 1px solid #ccc;   /*枠線*/
-    border-radius: 5px;         /*丸みを付ける*/
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    margin-bottom: 0px;
+    font-size: 1rem;
+    box-sizing: border-box;
   }
-  .contact-form input[type="submit"]{
-    background-color: #000;   /*背景くろ*/
-    color: #f9f9f9;           /*全体の文字色*/
-    border: none;               /*ボーダー消す*/
-    padding:12px 30px;          /*ボタン内の余白*/
-    font-size: 16px;            /*文字のサイズ*/
+ 
+  .contact-form textarea{
+    min-height: 150px;
   }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    height: 55px;
+  }
+
+  .form-item{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+ .form-item.submit-button input[type="submit"]{
+  width: 200px;
+  padding: 15px 0px;
+  margin: 30px auto 30px;
+  display: block;
+  font-size: 13px;
+ }
+ .contact-form{
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+ }
 }
